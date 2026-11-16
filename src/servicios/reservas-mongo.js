@@ -108,7 +108,6 @@ function crearServicioReservasMongo() {
     }
     let ordenMongo = { estudiante: 1, _id: 1 };
 
-
     if (orden === "personas-asc") {
       ordenMongo = { personas: 1, _id: 1 };
     }

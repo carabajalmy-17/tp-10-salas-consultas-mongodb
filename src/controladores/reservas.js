@@ -67,13 +67,17 @@ function crearControladorReservas(servicio) {
 
     if (req.query.pagina !== undefined) {
       if (typeof req.query.pagina !== "string") {
-        return res.status(400).json({ error: "La página debe ser un único texto." });
+        return res
+          .status(400)
+          .json({ error: "La página debe ser un único texto." });
       }
 
       pagina = Number(req.query.pagina);
 
       if (!Number.isInteger(pagina) || pagina < 1 || pagina > 1000) {
-        return res.status(400).json({ error: "La página debe ser un entero entre 1 y 1000." });
+        return res
+          .status(400)
+          .json({ error: "La página debe ser un entero entre 1 y 1000." });
       }
     }
 
@@ -81,13 +85,17 @@ function crearControladorReservas(servicio) {
 
     if (req.query.limite !== undefined) {
       if (typeof req.query.limite !== "string") {
-        return res.status(400).json({ error: "El límite debe ser un único texto." });
+        return res
+          .status(400)
+          .json({ error: "El límite debe ser un único texto." });
       }
 
       limite = Number(req.query.limite);
 
       if (!Number.isInteger(limite) || limite < 1 || limite > 20) {
-        return res.status(400).json({ error: "El límite debe ser un entero entre 1 y 20." });
+        return res
+          .status(400)
+          .json({ error: "El límite debe ser un entero entre 1 y 20." });
       }
     }
     const resultado = await servicio.consultar(sala, orden, pagina, limite);
