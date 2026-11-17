@@ -7,7 +7,7 @@ function validarReemplazoReserva(req, res, next) {
     "fecha",
     "turno",
     "personas",
-    //"estado",
+    "estado",
   ];
   for (const campo of Object.keys(datos)) {
     if (!permitidos.includes(campo)) {

@@ -3,7 +3,7 @@ const { validarReserva } = require("../middleware/reservas");
 const {
   validarReemplazoReserva,
   validarActualizacionReserva,
-} = require("../middleware/cambios-productos");
+} = require("../middleware/cambios-reservas");
 function crearRouterReservasApi(controlador) {
   const router = express.Router();
   router.get("/", controlador.listarApi);
